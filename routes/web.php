@@ -25,7 +25,7 @@ Route::get('/contato', [contatoController::class, 'principal'])->name('contato.p
 //Nome, categoria, assunto, mensagem
 
 Route::get('contato/{nome}/{categoria}/{assunto}/{mensagem}', function (string $nome, string $categoria, string $assunto, string $mensagem) {
-    echo 'Estamos aqui ' . $nome. "<br>Gostaria de falar com o time de $categoria sobre $assunto.<br>$mensagem";
+    echo 'Estamos aqui ' . $nome. "<br>Gostaria de falar com oo time de $categoria sobre $assunto.<br>$mensagem";
 });
 
 
