@@ -30,6 +30,22 @@ Route::prefix('/app') -> group(function(){
     return 'Produtos'; }) -> name('app.produtos');
 });
 
+Route::get('/rota1', function (){
+  echo 'Rota 1';
+}) -> name('site.rota1');
+
+
+Route::get('/rota2', function(){
+  return redirect() -> route('site.rota1'); //Redirecionando dentro da função (poderia ser um controller).
+}) -> name('site.rota2');
+
+
+//Route::redirect('/rota2','/rota1'); //Redireciona de uma rota X para Y no momento do acesso.
+
+
+Route::fallback(function(){
+    echo 'A rota acessada não existe.<a href="'.route("site.index").'"> Clique aqui </a>para ir para a página inicial'; //Criando fallback.
+});
 
 
 /*
