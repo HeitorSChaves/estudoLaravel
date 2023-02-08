@@ -22,13 +22,12 @@ Route::get('/sobre-nos', [sobreNosController::class, 'principal'])->name('sobre-
 
 Route::get('/contato', [contatoController::class, 'principal'])->name('contato.principal');
 
-//Nome, categoria, assunto, mensagem
-
-Route::get('contato/{nome}/{categoria}/{assunto}/{mensagem}', function (string $nome, string $categoria, string $assunto, string $mensagem) {
-    echo 'Estamos aqui ' . $nome. "<br>Gostaria de falar com oo time de $categoria sobre $assunto.<br>$mensagem";
+Route::get('/contato/{nome}/{categoria}/{assunto}/{mensagem}', function (string $nome, string $categoria, string $assunto, string $mensagem) {
+    echo "Olá, me chamo $nome e gostaria de falar com a equipe de $categoria.<br>
+    O assunto é $assunto.<br>$mensagem";
 });
 
-
+//Nome, categoria, assunto, mensagem
 /*
 Verbo http
 
