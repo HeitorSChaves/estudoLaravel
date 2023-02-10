@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class sobreNosController extends Controller
 {
     public function principal(){
-        return view('site.sobre-nos');
+        return view('site.sobre-nos', ['titulo'=>'Super Gestão - Sobre Nós' ]);
     }
 }
