@@ -26,7 +26,7 @@ return new class extends Migration
 
             //1 pra 1
             $table->unique('produto_id');
-            
+
         });
     }
 
