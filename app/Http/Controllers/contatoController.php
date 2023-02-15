@@ -7,6 +7,11 @@ use App\Models\SiteContato;
 
 class contatoController extends Controller
 {
+    public function index (Request $request){
+
+       
+        return view('site.contato', ['titulo'=>'Super Gestão - Contato']);
+    }
     public function principal (Request $request){
 
         $contato = new SiteContato();

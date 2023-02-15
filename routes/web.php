@@ -12,7 +12,7 @@ Route::get('/', [PrincipalController::class, 'principal'])->name('site.index');
 
 Route::get('/sobre-nos', [sobreNosController::class, 'principal'])->name('site.sobrenos');
 
-Route::get('/contato', [contatoController::class, 'principal'])->name('site.contato');
+Route::get('/contato', [contatoController::class, 'index'])->name('contato.index');
 Route::post('/contato', [contatoController::class, 'principal'])->name('site.contato');
 
 
