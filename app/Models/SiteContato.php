@@ -9,5 +9,9 @@ class SiteContato extends Model
 {
     use HasFactory;
 
-    protected $fillable=['nome','telefone','email','motivo_contato','mensagem'];
+    protected $fillable=['nome','telefone','email','motivo_contatos_id','mensagem'];
+
+    public function xpto(){
+        return $this->hasOne(MotivoContato::class,'id','motivo_contatos_id');
+    }
 }
