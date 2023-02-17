@@ -6,7 +6,7 @@ use App\Http\Controllers\sobreNosController;
 use App\Http\Controllers\contatoController;
 use App\Http\Controllers\FornecedorController;
 use App\Http\Controllers\TesteController;
-
+use App\Http\Middleware\LogAcessoMiddleware;
 
 Route::get('/', [PrincipalController::class, 'principal'])->name('site.index');
 
@@ -21,7 +21,7 @@ Route::get('/login', function () {
 
 //Criando prefixo e agrupando rotas
 
-Route::prefix('/app') -> group(function(){
+Route::middleware('log.acesso','autenticacao')->prefix('/app') -> group(function(){
 
   Route::get('/clientes', function () {
     return 'Clientes'; }) -> name('app.clientes');
