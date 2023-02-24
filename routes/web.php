@@ -7,6 +7,7 @@ use App\Http\Controllers\contatoController;
 use App\Http\Controllers\FornecedorController;
 use App\Http\Controllers\TesteController;
 use App\Http\Middleware\LogAcessoMiddleware;
+use App\Http\Controllers\LoginController;
 
 Route::get('/', [PrincipalController::class, 'principal'])->name('site.index');
 
@@ -16,8 +17,8 @@ Route::get('/contato', [contatoController::class, 'index'])->name('contato.index
 Route::post('/contato', [contatoController::class, 'salvar'])->name('site.contato');
 
 
-Route::get('/login', function () {
-  return 'Login'; })->name('site.login');
+Route::get('/login', [LoginController::class, 'index'])->name('site.login');
+Route::post('/login', [LoginController::class, 'autenticar'])->name('site.login');
 
 //Criando prefixo e agrupando rotas
 
